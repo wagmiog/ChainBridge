@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "chainbridge-relayer.fullname" . }}
+  labels:
+    {{- include "chainbridge-relayer.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  selector:
+    matchLabels:
+      {{- include "chainbridge-relayer.selectorLabels" . | nindent 6 }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
+  template:
+    metadata:
+      labels:
+        {{- include "chainbridge-relayer.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: "{{  .Chart.Name  }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command: ["--config", "/config/config.json", "--verbosity", "trce"]
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          resources:
+            {{ toYaml .Values.resources }}
+          volumeMounts:
+            # name must match the volume name below
+            - name: chainbridge-secret-volume
+              mountPath: /keys
+            - name: chainbridge-config-volume
+              mountPath: /config
+              subPath: config.json
+          env:
+            - name: KEYSTORE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key:  {{ .Values.keystore.password.fromSecret.key }}
+                  name: {{ .Values.keystore.password.fromSecret.name }}
+      volumes:
+        - name: chainbridge-secret-volume
+          secret:
+            secretName:  {{ .Values.keystore.keys.fromSecret.name }}
+        - name: chainbridge-config-volume
+          configMap:
+            name: chainbridge-relayer-config
+
