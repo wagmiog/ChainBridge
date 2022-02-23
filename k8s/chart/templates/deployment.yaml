@@ -32,7 +32,7 @@ spec:
             - name: chainbridge-secret-volume
               mountPath: /keys
             - name: chainbridge-config-volume
-              mountPath: /config
+              mountPath: /config/config.json
               subPath: config.json
           env:
             - name: KEYSTORE_PASSWORD
