@@ -1,0 +1,42 @@
+{
+  "chains": [
+    {
+      "name": "Wagmi",
+      "type": "ethereum",
+      "id": "0",
+      "endpoint": "https://api.trywagmi.xyz/rpc",
+      "from": "0xd8f9743422BE872Bee0490563e70C4bf63c6DBe0",
+      "opts": {
+        "bridge": "0x5643c725f95BbA34DeFDC6335b644Cae9c9732ef",
+        "erc20Handler": "0x0360351ccaBBbad718bf6B7c7204BC8231296e3A",
+        "genericHandler": "0x0360351ccaBBbad718bf6B7c7204BC8231296e3A",
+        "gasLimit": "1000000",
+        "minGasPrice": "25000000000",
+        "maxGasPrice": "800000000000",
+        "gasMultiplier": "1.25",
+        "startBlock": "6371449",
+        "http": "true",
+        "blockConfirmations": "1"
+      }
+    },
+    {
+      "name": "fuji",
+      "type": "ethereum",
+      "id": "1",
+      "endpoint": "https://api.avax-test.network/ext/bc/C/rpc",
+      "from": "0xd8f9743422BE872Bee0490563e70C4bf63c6DBe0",
+      "opts": {
+        "bridge": "0x0eaAA14Bd8CcFbEC0Ab7c0EeadC0919F3C2f4477",
+        "erc20Handler": "0xF56C15022646e3295d3E135Ae6FAE6e2E1817cC2",
+        "genericHandler": "0xF56C15022646e3295d3E135Ae6FAE6e2E1817cC2",
+        "gasLimit": "1000000",
+        "minGasPrice": "25000000000",
+        "maxGasPrice": "800000000000",
+        "gasMultiplier": "1.25",
+        "startBlock": "650000",
+        "http": "true",
+        "blockConfirmations": "1"
+      }
+    }
+  ]
+}
