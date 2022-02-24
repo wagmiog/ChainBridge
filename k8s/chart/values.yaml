@@ -6,7 +6,7 @@ fullnameOverride: ""
 log_level: "trce"
 keystore:
   password:
-    #provide b64 encoded secrets only for testing
+    #provide b64 encoded secrets only for testing. !!! never commit to git
     b64: "cGFzc3dvcmQ="
     fromSecret:
       key: "password"
