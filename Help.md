@@ -13,7 +13,10 @@ npx cb-sol-cli --url $SRC_GATEWAY --privateKey $SRC_PK --gasPrice 22500000000 ad
     --bridge $SRC_BRIDGE
 ```
 
-## Install relayer on k8s
 ```
-helm install -f deploy/values.yaml chainbridge-relayer ./k8s/chart
+npx cb-sol-cli --url $SRC_GATEWAY --privateKey $SRC_PK --gasPrice 22500000000 admin add-relayer \
+    --relayer $RELAYER_TWO_ADDRESS \
+    --bridge $DST_BRIDGE
 ```
+
+
