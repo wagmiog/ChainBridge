@@ -4,4 +4,4 @@ metadata:
   name: chainbridge-relayer-config
 data:
   config.json: |-
-  {{- $.Files.Get "data/config.json"  | nindent 6 -}}
+  {{-  .Values.config.b64 | b64dec | nindent 6 -}}
