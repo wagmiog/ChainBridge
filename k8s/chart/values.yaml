@@ -6,10 +6,13 @@ fullnameOverride: ""
 log_level: "trce"
 keystore:
   password:
+    #provide b64 encoded secrets only for testing
+    b64: "cGFzc3dvcmQ="
     fromSecret:
       key: "password"
       name: "keystore-password"
   keys:
+    #provide b64 encoded secrets only for testing
     fromSecret:
       name: "chainbridge-keys-secret"
 config:
