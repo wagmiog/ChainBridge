@@ -182,3 +182,25 @@ to ensure a statement and patch release is made in a timely manner.
 
 Please email us a description of the flaw and any related information (e.g. reproduction steps, version) to
 [security at chainsafe dot io](mailto:security@chainsafe.io).
+
+# Kubernetes deployment 
+
+## Install relayer on k8s with helm
+
+Requirements:
+ - k8s cluster
+ - helm installed
+
+setup  your own values, by following templated ones:
+
+```
+cp k8s/chart/values.yaml k8s/chart/deploy/values.yaml
+``` 
+
+deploy with helm
+
+```
+helm install -f deploy/values.yaml chainbridge-relayer ./k8s/chart
+```
+
+uninstall and upgrade using usual helm commands !
