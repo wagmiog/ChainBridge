@@ -23,7 +23,7 @@ spec:
       containers:
         - name: "{{  .Chart.Name  }}"
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          command: ["--config", "/config/config.json", "--verbosity", "{{ .Values.log_level }}", "--latest"]
+          args: ["--config", "/config/config.json", "--verbosity", "{{ .Values.log_level }}", "--latest"]
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           resources:
             {{ toYaml .Values.resources }}
