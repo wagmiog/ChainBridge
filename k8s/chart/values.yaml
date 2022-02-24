@@ -18,9 +18,9 @@ keystore:
       name: "chainbridge-keys-secret"
 
   #provide b64 encoded secrets only for testing. !!! never commit to git
-  provided_keys:
-    "0x1.key": "ewoJInR5cGUiOiAic2VjcDI1NmsxIiwKCSJwdWJsaWNLZXkiOiAicHVibGlja2V5IiwKCSJhZGRyZXNzIjogImFkZHJlc3MiLAoJImNpcGhlcnRleHQiOiAiY2lwaGVydGV4dCIKfQ=="
-    "0x2.key": "ewoJInR5cGUiOiAic2VjcDI1NmsxIiwKCSJwdWJsaWNLZXkiOiAicHVibGlja2V5IiwKCSJhZGRyZXNzIjogImFkZHJlc3MiLAoJImNpcGhlcnRleHQiOiAiY2lwaGVydGV4dCIKfQ=="
+#  provided_keys:
+#    "0x1.key": "ewoJInR5cGUiOiAic2VjcDI1NmsxIiwKCSJwdWJsaWNLZXkiOiAicHVibGlja2V5IiwKCSJhZGRyZXNzIjogImFkZHJlc3MiLAoJImNpcGhlcnRleHQiOiAiY2lwaGVydGV4dCIKfQ=="
+#    "0x2.key": "ewoJInR5cGUiOiAic2VjcDI1NmsxIiwKCSJwdWJsaWNLZXkiOiAicHVibGlja2V5IiwKCSJhZGRyZXNzIjogImFkZHJlc3MiLAoJImNpcGhlcnRleHQiOiAiY2lwaGVydGV4dCIKfQ=="
 
 config:
   name: "chainbridge-relayer-config"
