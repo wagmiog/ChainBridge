@@ -1,0 +1,10 @@
+{{- if .Values.keystore.provided_keys -}}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ .Values.keystore.password.fromSecret.name }}
+data:
+  {{- range $key, $value := $.Values.keystore.provided_keys }}
+    {{ $key | quote }}: {{ $value | quote }}
+  {{- end }}
+{{- end }}
