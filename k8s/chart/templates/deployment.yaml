@@ -46,5 +46,5 @@ spec:
             secretName:  {{ .Values.keystore.keys.fromSecret.name }}
         - name: chainbridge-config-volume
           configMap:
-            name: chainbridge-relayer-config
+            name: {{ .Values.config.name }}
 
