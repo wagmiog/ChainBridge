@@ -1,5 +1,7 @@
 config/config.json
-
+.env.*
+!.env.example
+scripts/configs/examples
 # Binaries for programs and plugins
 *.exe
 *.exe~
