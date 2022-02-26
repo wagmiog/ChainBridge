@@ -100,3 +100,17 @@ cb-sol-cli --url $DST_GATEWAY --privateKey $DST_PK --gasPrice 25000000000 admin 
     --fee 0
 ```
 
+##Update threshold
+
+
+```
+cb-sol-cli --url $SRC_GATEWAY --privateKey $SRC_PK --gasPrice 25000000000 admin set-threshold \
+    --bridge $SRC_BRIDGE \
+    --threshold 2
+```
+
+```
+cb-sol-cli --url $DST_GATEWAY --privateKey $DST_PK --gasPrice 25000000000 admin set-threshold \
+    --bridge $DST_BRIDGE \
+    --threshold 2
+```
